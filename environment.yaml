@@ -1,4 +1,4 @@
-name: ssiunet
+name: msunet
 channels:
   - defaults
   - https://repo.anaconda.com/pkgs/main
