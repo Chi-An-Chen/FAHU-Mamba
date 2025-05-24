@@ -1,9 +1,9 @@
-# MSU-Net : A State Space-Inspired U-Net with Linear Attention for Breast Tumor Image Segmentation  
+# MSU-Net : A Mamba-Spectral Hybrid U-Net for Breast Tumor Segmentation
 <div align="center">
 
-  [[`Paper`](assets/AIxMHC2025_TumorSeg_Sean.pdf)]
+  [[`Paper`](assets/AIxMHC2025_SwinUMamba.pdf)]
   
-  This is the official PyTorch implementation of SSIU-Net: a State Space-Inspired U-Net that integrates a State Space Model (SSM) with a Mamba-Inspired Linear Attention Block (MILA) for breast tumor image segmentation.  
+  This is the official PyTorch implementation of MSU-Net : A Mamba-Spectral Hybrid U-Net (MSU-Net) architecture that combines a State Space Model (SSM) and spectral domain feature representations within a U-Net convolutional network, designed for tumor segmentation in breast DCE-MRI images.
 
 </div>
 
@@ -12,10 +12,10 @@ The following operations are all performed in a Linux environment.
 
 ```
 conda env create -f environment.yaml
-conda activate ssiunet 
+conda activate msunet 
 ```
 ```
-cd SSIU-Net-main
+cd MSU-Net-main
 pip install -e .
 ```
 sanity test: Enter python command-line interface and run
