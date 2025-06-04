@@ -1,7 +1,7 @@
-# MSU-Net : A Mamba-Spectral Hybrid U-Net for Breast Tumor Segmentation
+# FAHU-Mamba : A Frequency-Aware Hybrid U-Mamba for Breast Tumor Segmentation
 <div align="center">
 
-  [[`Paper`](assets/AIxMHC2025_SwinUMamba.pdf)]
+  [[`Paper`](assets/paper.pdf)]
   
   This is the official PyTorch implementation of MSU-Net : A Mamba-Spectral Hybrid U-Net (MSU-Net) architecture that combines a State Space Model (SSM) and spectral domain feature representations within a U-Net convolutional network, designed for tumor segmentation in breast DCE-MRI images.
 
