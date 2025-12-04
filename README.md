@@ -3,7 +3,7 @@
 
   [[`Paper`](assets/paper.pdf)]
   
-  This is the official PyTorch implementation of FAHU-Mamba : a frequency-aware hybrid U-Mamba (FAHU-Mamba) model architecture, which integrates a state space model (SSM) and a frequency-aware module (FAM) for breast tumor segmentation.  
+  This is the official implementation of FAHU-Mamba : a frequency-aware hybrid U-Mamba (FAHU-Mamba) model architecture, which integrates a state space model (SSM) and a frequency-aware module (FAM) for breast tumor segmentation.  
   
 </div>
 
