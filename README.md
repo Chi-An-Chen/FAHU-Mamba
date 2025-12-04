@@ -42,3 +42,17 @@ Set your dataset id and other config in 005_inference.sh then run :
 bash 005_inference.sh
 ```
 
+## Citation： 
+```
+@INPROCEEDINGS{,
+  author={Chen, Chi-An and Sara Katharina Alessia Bosshart and Ke, Liang-Ying and Hsia, Chih-Hsien},
+  booktitle={2025 IEEE Second International Conference on Artificial Intelligence for Medicine, Health and Care (AIMHC)}, 
+  title={FAHU-Mamba : A Frequency-Aware Hybrid U-Mamba for Breast Tumor Segmentation}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={},
+  keywords={},
+  doi={}}
+```
+
