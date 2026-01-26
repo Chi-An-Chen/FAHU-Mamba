@@ -44,15 +44,15 @@ bash 005_inference.sh
 
 ## Citation： 
 ```
-@INPROCEEDINGS{,
-  author={Chen, Chi-An and Sara Katharina Alessia Bosshart and Ke, Liang-Ying and Hsia, Chih-Hsien},
-  booktitle={2025 IEEE Second International Conference on Artificial Intelligence for Medicine, Health and Care (AIMHC)}, 
-  title={FAHU-Mamba : A Frequency-Aware Hybrid U-Mamba for Breast Tumor Segmentation}, 
+@INPROCEEDINGS{11326816,
+  author={Chen, Chi-An and Alessia Bosshart, Sara Katharina and Ke, Liang-Ying and Hsia, Chih-Hsien},
+  booktitle={2025 Second International Conference on Artificial Intelligence for Medicine, Health and Care (AIxMHC)}, 
+  title={A Frequency-Aware Hybrid U-Mamba for Breast Tumor Segmentation}, 
   year={2025},
   volume={},
   number={},
-  pages={},
-  keywords={},
-  doi={}}
+  pages={262-263},
+  keywords={Measurement;Image segmentation;Breast tumors;Databases;Shape;Computational modeling;Resonant frequency;Predictive models;Planning;Medical diagnostic imaging;Computer vision;Image segmentation;State space models;Breast tumor},
+  doi={10.1109/AIxMHC65380.2025.00056}}
 ```
 
