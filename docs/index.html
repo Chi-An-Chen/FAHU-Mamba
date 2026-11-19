@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbfaf7">
+  <meta name="description" content="FAHU-Mamba segments breast tumors in dynamic contrast-enhanced MRI. The encoder merges image patches to collect context at several scales. The decoder expands the patches back to image resolution, using skip connections to recover spatial detail.">
+  <title>FAHU-Mamba · A Frequency-Aware Hybrid U-Mamba for Breast Tumor Segmentation</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="site.js"></script>
+</head>
+<body id="top">
+  <a class="skip" href="#overview">Skip to overview</a>
+  <header class="site-head"><div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="FAHU-Mamba, back to top"><span class="mark" aria-hidden="true"></span>FAHU-Mamba</a>
+    <nav aria-label="Sections"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Results</a><a href="#citation">Citation</a></nav>
+  </div><div class="progress" aria-hidden="true"></div></header>
+  <main>
+    <section id="overview" class="wrap overview">
+      <div class="hero"><div>
+        <p class="eyebrow"><span class="rule"></span>AIxMHC 2025</p>
+        <h1>A <em>Frequency-Aware Hybrid U-Mamba</em> for Breast Tumor Segmentation</h1>
+        <p class="authors"><span>Chi-An Chen<sup>1</sup></span>, <span>Sara Katharina Alessia Bosshart<sup>2</sup></span>, <span>Liang-Ying Ke<sup>3</sup></span>, <span>Chih-Hsien Hsia<sup>1</sup></span></p>
+        <p class="affiliations"><span>¹ National Ilan University</span><span>² Leysin American School</span><span>³ National Cheng Kung University</span></p>
+        <div class="actions"><a class="button primary" href="https://ieeexplore.ieee.org/document/11326816">Read paper</a><a class="button" href="https://github.com/Chi-An-Chen/FAHU-Mamba">View code</a></div>
+      </div><dl class="metrics" aria-label="Paper-reported metrics"><div><dt>Dice · BreastDM</dt><dd>82.35<span>%</span></dd></div><div><dt>Positive predictive value</dt><dd>89.73<span>%</span></dd></div><div><dt>Recall</dt><dd>88.25<span>%</span></dd></div></dl></div>
+      <figure class="arch arch-portrait">
+        <figcaption><strong>Model architecture</strong><a href="figures/architecture.webp">Full size</a></figcaption>
+        <div class="arch-body"><div><h2>From MRI patches to a tumor mask</h2><p>FAHU-Mamba segments breast tumors in dynamic contrast-enhanced MRI. The encoder merges image patches to collect context at several scales. The decoder expands the patches back to image resolution, using skip connections to recover spatial detail.</p></div>
+          <a class="diagram" href="figures/architecture.webp" aria-label="Open full-size diagram: A U-shaped encoder and decoder apply frequency-aware selective scan blocks before predicting a breast tumor mask."><img src="figures/architecture.webp" width="359" height="634" alt="A U-shaped encoder and decoder apply frequency-aware selective scan blocks before predicting a breast tumor mask."></a></div>
+      </figure>
+    </section>
+    <section id="method" class="section tinted"><div class="wrap">
+      <p class="eyebrow">Method</p><h2>Learning from spatial detail and frequency</h2>
+      <p class="intro">Both sides of the U-Net use frequency-aware selective scan blocks. Within each block, a spatial scan captures context and a learned frequency filter adjusts the contribution of different components.</p><div class="methods"><article><h3>Frequency-aware selective scan</h3><a class="diagram" href="figures/fa-ssb.webp" aria-label="Open full-size diagram: FA-SSB combines depthwise convolution, a 2D selective scan and gating before FAM."><img src="figures/fa-ssb.webp" width="1008" height="1801" alt="FA-SSB combines depthwise convolution, a 2D selective scan and gating before FAM." loading="lazy"></a><p>A depthwise convolution extracts local texture before the two-dimensional selective scan (SS2D) mixes information across the image. A parallel projection gates the scan features before they reach the frequency-aware module.</p></article>
+<article><h3>Frequency-aware module</h3><a class="diagram" href="figures/fam.webp" aria-label="Open full-size diagram: FAM applies a Fourier transform, learned frequency weights, an inverse transform and an MLP."><img src="figures/fam.webp" width="346" height="470" alt="FAM applies a Fourier transform, learned frequency weights, an inverse transform and an MLP." loading="lazy"></a><p>A Fourier transform maps features into the frequency domain. Learnable weights scale the components, and an inverse transform returns the result to the spatial domain for further mixing.</p></article></div>
+    </div></section>
+    <section id="results" class="section wrap">
+      <p class="eyebrow">Results</p><h2>Tumor segmentation on BreastDM</h2>
+      <p class="intro">FAHU-Mamba achieved 82.35% Dice overlap between the predicted and reference tumor masks. The paper reports an 80% training and 20% testing split on BreastDM.</p>
+      <div class="table-scroll" role="region" aria-label="Benchmark results" tabindex="0">
+        <table><caption>BreastDM · Table I, paper-reported results</caption>
+          <thead><tr><th scope="col">Method</th><th scope="col">Dice (%) ↑</th><th scope="col">PPV (%) ↑</th><th scope="col">Recall (%) ↑</th></tr></thead><tbody><tr><th scope="row">PSPNet</th><td>72.7</td><td>72.9</td><td>72.5</td></tr><tr><th scope="row">UNeXt</th><td>70.1</td><td>86.3</td><td>59.0</td></tr><tr class="featured"><th scope="row">FAHU-Mamba</th><td>82.35</td><td>89.73</td><td>88.25</td></tr></tbody>
+        </table>
+      </div><p class="note">PPV measures the proportion of predicted tumor pixels inside the reference mask. Recall measures the proportion of reference tumor pixels recovered.</p>
+    </section>
+    <section id="citation" class="section tinted"><div class="wrap resources">
+      <div><p class="eyebrow">Code &amp; citation</p><h2>Use this work</h2>
+        <p>See the project repository for the PyTorch implementation and instructions.</p>
+        <div class="resource-links"><a href="https://github.com/Chi-An-Chen/FAHU-Mamba#environments">Environment</a><a href="https://github.com/Chi-An-Chen/FAHU-Mamba#inference">Inference</a></div>
+      </div>
+      <div class="cite"><div class="cite-head"><strong>BibTeX</strong><button type="button" id="copy" hidden>Copy citation</button><span class="sr" id="copy-status" role="status"></span></div>
+        <pre><code id="bibtex">@INPROCEEDINGS{11326816,
+  author={Chen, Chi-An and Alessia Bosshart, Sara Katharina and Ke, Liang-Ying and Hsia, Chih-Hsien},
+  booktitle={2025 Second International Conference on Artificial Intelligence for Medicine, Health and Care (AIxMHC)},
+  title={A Frequency-Aware Hybrid U-Mamba for Breast Tumor Segmentation},
+  year={2025},
+  pages={262-263},
+  doi={10.1109/AIxMHC65380.2025.00056}}</code></pre></div>
+    </div></section>
+  </main>
+  <footer class="wrap"><span>FAHU-Mamba · AIxMHC 2025</span><a href="#top">Back to top</a></footer>
+</body>
+</html>

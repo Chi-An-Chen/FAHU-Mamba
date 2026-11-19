@@ -1,7 +1,7 @@
 # FAHU-Mamba : A Frequency-Aware Hybrid U-Mamba for Breast Tumor Segmentation
-<div align="center">
+[Project page](https://chi-an-chen.github.io/FAHU-Mamba/) · [Paper](https://ieeexplore.ieee.org/document/11326816)
 
-  [[`Paper`](https://ieeexplore.ieee.org/document/11326816)]
+<div align="center">
   
   This is the official implementation of FAHU-Mamba : a frequency-aware hybrid U-Mamba (FAHU-Mamba) model architecture, which integrates a state space model (SSM) and a frequency-aware module (FAM) for breast tumor segmentation.  
   
