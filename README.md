@@ -8,14 +8,13 @@
 </div>
 
 ## Environments  
-The following operations are all performed in a Linux environment.  
+Run these commands on Linux from the repository root, which contains `environment.yaml` and `setup.py`.  
 
 ```
 conda env create -f environment.yaml
 conda activate msunet 
 ```
 ```
-cd MSU-Net-main
 pip install -e .
 ```
 sanity test: Enter python command-line interface and run
