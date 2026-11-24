@@ -1,4 +1,6 @@
 # FAHU-Mamba : A Frequency-Aware Hybrid U-Mamba for Breast Tumor Segmentation
+
+[Research guide: dataset paths, trainer, and evaluation](RESEARCH_GUIDE.md)
 [Project page](https://chi-an-chen.github.io/FAHU-Mamba/) · [Paper](https://ieeexplore.ieee.org/document/11326816)
 
 <div align="center">
